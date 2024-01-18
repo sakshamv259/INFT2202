@@ -1,100 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - List King</title>
-    <link rel="stylesheet" href="css/c06.css">
-    <style>
-        /*  some custom styles here */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+<html>
+	<head>
+		<title>
+			JavaScript &amp; jQuery - Chapter 6: Events - Event Handler
+		</title>
+		<link rel="stylesheet" href="css/c06.css" />
+	</head>
+	<body>
+		<div id="page">
+			<h1>List King</h1>
+			<h2>New Account</h2>
+			<form method="post" action="http://www.example.org/register">
+				<label for="username">Create a username: </label>
+				<input type="text" id="username" />
+				<div id="feedback"></div>
 
-        #page {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+				<label for="password">Create a password: </label>
+				<input type="password" id="password" />
 
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 8px;
-        }
-
-        input {
-            padding: 8px;
-            margin-bottom: 16px;
-        }
-
-        button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 4px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div id="page">
-        <header>
-            <h1>Welcome to List King</h1>
-            <h2>Create a New Account</h2>
-        </header>
-
-        <section>
-            <form id="registrationForm" method="post" action="http://www.example.org/register">
-                <!-- Username Input -->
-                <label for="username">Username: </label>
-                <input type="text" id="username" placeholder="Enter your username" required>
-                <div id="feedback"></div> <!-- Feedback for the user -->
-
-                <!-- Password Input -->
-                <label for="password">Password: </label>
-                <input type="password" id="password" placeholder="Create a secure password" required>
-
-                <!-- Sign Up Button -->
-                <button type="submit" onclick="validateForm()">Sign Up</button>
-            </form>
-        </section>
-    </div>
-
-    <script>
-        // JavaScript Event Handler
-        function validateForm() {
-            var usernameInput = document.getElementById('username');
-            var passwordInput = document.getElementById('password');
-            var feedbackDiv = document.getElementById('feedback');
-
-            // Simple validation example
-            if (usernameInput.value.length < 5) {
-                feedbackDiv.innerText = 'Username must be at least 5 characters long.';
-            } else {
-                feedbackDiv.innerText = ''; // Clear previous feedback
-                // Additional validation logic can be added here
-            }
-        }
-    </script>
-</body>
+				<input type="submit" value="sign up" />
+			</form>
+		</div>
+		<script src="js/event-handler.js"></script>
+	</body>
 </html>
